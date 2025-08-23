@@ -3,11 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="./style.css">
     <title>Ytinder</title>
 </head>
 <body>
-<h1>hello word: </h1>
+    <div class="w-full h-screen bg-black font-[Quicksand]">
+        <div class="img-container w-full h-screen">
+            <div class="maincard z-[3] w-full h-screen absolute bg-orange-600">
+                <img class="w-full h-screen object-cover" src="https://i.pinimg.com/736x/5b/da/91/5bda911d2a0df4b64d44af71262010b1.jpg" alt="">
+            </div>
+            <div class="incomingcard z-[2] w-full h-screen absolute bg-green-600"></div>
+        </div>
+        <div class="absolute top-0 left-0 z-[4] w-full h-screen px-5 py-6">
+            <div class="navbar flex justify-between items-center text-white">
+                <div class="pro-img w-[3rem] h-[3rem] rounded-full bg-red-600 overflow-hidden">
+                    <img class="w-full h-full object-cover " src="https://i.pinimg.com/1200x/b9/ff/c8/b9ffc88ad813f68a723558620ce3ff47.jpg" alt="">
+                </div>
+                <h3 class="capitalize text-[1.55rem] font-medium tracking-tighter">they liked you.</h3> 
+                <div class="chaticon rounded-full w-[3rem] h-[3rem] bg-white/20 relative flex justify-center items-center">
+                    <i class="ri-chat-1-fill opacity-80 text-[1.5rem]"></i>
+                    <div class="badge w-5 h-5 bg-red-700 flex items-center justify-center rounded-full absolute top-0 right-0 -translate-y-[5px] -translate-x-[3px]">
+                        <h5 class="text-[13px] font-[500]">5</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="./script.js"></script>
 </body>
