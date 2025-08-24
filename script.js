@@ -141,8 +141,14 @@ function imageChange() {
         scale: 1.1,
         opacity: 0,
         ease: Circ,
-        duration: 0.5
-    })
+        duration: 0.9
+    }, "a")
+    tl.from(".incomingcard", {
+        scale: 0.9,
+        opacity: 0,
+        ease: Circ,
+        duration: 1.1
+    }, "a")
 };
 
   let deny = document.querySelector(".deny");
