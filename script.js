@@ -135,7 +135,14 @@ let crr = 0;  // current profile
 })();
 
 function imageChange() {
+    let tl = gsap.timeline();
 
+    tl.to(".maincard", {
+        scale: 1.1,
+        opacity: 0,
+        ease: Circ,
+        duration: 0.5
+    })
 };
 
   let deny = document.querySelector(".deny");
@@ -143,4 +150,4 @@ function imageChange() {
 
   deny.addEventListener("click", function() {
       imageChange();
-  })
+  });
