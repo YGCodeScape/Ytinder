@@ -61,7 +61,7 @@ var users = [
                 interests: "Cooking"
             }
         ],
-        bio: "Foodie and a dance enthusiast. Let's groove together!",
+        bio: "Foodie and a dance enthusiast. Let's groove together! dancing is my passion. professional dancer.",
         isFriends: null
     },
     {
@@ -81,7 +81,7 @@ var users = [
                 interests: "Reading"
             }
         ],
-        bio: "Capturing moments and staying fit. Let's connect!",
+        bio: "Capturing moments and staying fit. Let's connect! love to explore new places. and love to try new cuisines.",
         isFriends: null
     },
     {
@@ -101,7 +101,7 @@ var users = [
                 interests: "Traveling"
             },
         ],
-        bio: "A culinary enthusiast who loves to travel and practice yoga.",
+        bio: "A culinary enthusiast who loves to travel and practice yoga, love to make new friends.",
         isFriends: null
     }
 ];
