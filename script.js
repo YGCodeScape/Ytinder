@@ -1,5 +1,5 @@
 // get the data. add more girl user data
-var users = [
+let users = [
     {
         profilePic: "https://i.pinimg.com/736x/e7/6f/86/e76f86a7889232e98e2c6533d11f1c43.jpg",
         DisplayPic: "https://i.pinimg.com/736x/e7/6f/86/e76f86a7889232e98e2c6533d11f1c43.jpg",
@@ -106,7 +106,7 @@ var users = [
     }
 ];
 
-var crr = 0;  // current profile 
+let crr = 0;  // current profile 
 
 (function setInitial() {
     document.querySelector(".maincard img").src = users[crr].DisplayPic;
@@ -133,3 +133,14 @@ var crr = 0;  // current profile
     document.querySelector(".incomingcard img").src = users[crr+1].DisplayPic;
     crr = 2;
 })();
+
+function imageChange() {
+
+};
+
+  let deny = document.querySelector(".deny");
+  let accept = document.querySelector(".accept");
+
+  deny.addEventListener("click", function() {
+      imageChange();
+  })
