@@ -106,7 +106,7 @@ var users = [
     }
 ];
 
-var crr = 4;  // current profile 
+var crr = 0;  // current profile 
 
 (function setInitial() {
     document.querySelector(".maincard img").src = users[crr].DisplayPic;
@@ -127,7 +127,6 @@ var crr = 4;  // current profile
         })
         document.querySelector(".tags").innerHTML = clutter;
     })();
-    
     document.querySelector(".bio p").textContent = users[crr].bio;
 
 
