@@ -107,6 +107,7 @@ let users = [
 ];
 
 let crr = 0;  // current profile 
+let isAnimating = false;
 
 (function setInitial() {
     document.querySelector(".maincard img").src = users[crr].DisplayPic;
@@ -135,8 +136,11 @@ let crr = 0;  // current profile
 })();
 
 function imageChange() {
+if(!isAnimating) {
+    isAnimating = true;
     let tl = gsap.timeline({
-        onComplete: function() {
+      onComplete: function() {
+        isAnimating = false;
             let main = document.querySelector(".maincard");
             let incoming = document.querySelector(".incomingcard");
 
@@ -147,28 +151,32 @@ function imageChange() {
             main.classList.remove("z-[3]");
             main.classList.add("z-[2]");
             gsap.set(main, {
-                scale: 1,
-                opacity:1
+                 scale: 1,
+                 opacity:1
             })
+            if(crr === users.length) crr = 0;
+            document.querySelector(".maincard img").src = users[crr].DisplayPic;
+            crr++;
+
             main.classList.remove("maincard");
-            
             incoming.classList.add("maincard");
             main.classList.add("incomingcard");
-        }
-    });
+      }
+ });
 
-    tl.to(".maincard", {
-        scale: 1.1,
-        opacity: 0,
-        ease: Circ,
-        duration: 0.9
-    }, "a")
-    tl.from(".incomingcard", {
-        scale: 0.9,
-        opacity: 0,
-        ease: Circ,
-        duration: 1.1
-    }, "a")
+ tl.to(".maincard", {
+      scale: 1.1,
+      opacity: 0,
+      ease: Circ,
+      duration: 0.9
+ }, "a")
+ tl.from(".incomingcard", {
+      scale: 0.9,
+      opacity: 0,
+      ease: Circ,
+      duration: 1.1
+ }, "a")
+  }
 };
 
   let deny = document.querySelector(".deny");
