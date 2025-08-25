@@ -109,6 +109,7 @@ let users = [
 let crr = 0;  // current profile 
 let isAnimating = false;
 
+// function to set data according to users index. so data take and placed here
 function setData(index) {
     document.querySelector(".pro-img img").src = users[index].profilePic;
     document.querySelector(".badge h5").textContent = users[index].pendingMessage;
@@ -130,6 +131,7 @@ function setData(index) {
     document.querySelector(".bio p").textContent = users[index].bio;
 }
 
+// function to set initial values of users 1 user
 (function setInitial() {
     document.querySelector(".maincard img").src = users[crr].DisplayPic;
     document.querySelector(".incomingcard img").src = users[crr+1].DisplayPic;
@@ -138,10 +140,12 @@ function setData(index) {
     crr = 2;
 })();
 
+// function for changing display images of users
 function imageChange() {
 if(!isAnimating) {
     isAnimating = true;
     let tl = gsap.timeline({
+        
       onComplete: function() {
         isAnimating = false;
             let main = document.querySelector(".maincard");
@@ -182,6 +186,7 @@ if(!isAnimating) {
   }
 };
 
+// gsap animation for buttons on click 
   let deny = document.querySelector(".deny");
   let accept = document.querySelector(".accept");
 
@@ -207,6 +212,7 @@ if(!isAnimating) {
        })
   });
 
+// create a blank div for all elements (child div of .details)
  ( function containerCreator() {
     document.querySelectorAll(".elements")
     .forEach(function(element) {
