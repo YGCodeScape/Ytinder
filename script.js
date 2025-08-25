@@ -196,6 +196,17 @@ if(!isAnimating) {
        })
   });
 
+   accept.addEventListener("click", function() {
+      imageChange();
+      setData(crr-1);
+      gsap.from(".details .elements", {
+         y : "100%",
+         stagger: .1,
+         ease: Power4.easeInOut,
+         duration: 1.5
+       })
+  });
+
  ( function containerCreator() {
     document.querySelectorAll(".elements")
     .forEach(function(element) {
