@@ -26,7 +26,7 @@ let users = [
     },
     {
         profilePic: "https://i.pinimg.com/736x/7d/32/f9/7d32f9666082a3853f8f196c6c9ebb50.jpg",
-        DisplayPic: "https://i.pinimg.com/736x/89/dc/04/89dc04bde7c8425af40df77e3a8042fb.jpg",
+        DisplayPic: "https://i.pinimg.com/736x/30/cd/1d/30cd1d698bf59586a52a703327fb00a7.jpg",
         pendingMessage: 5,
         location: "Mumbai, India",
         name: "Sayli",
@@ -135,7 +135,23 @@ let crr = 0;  // current profile
 })();
 
 function imageChange() {
-    let tl = gsap.timeline();
+    let tl = gsap.timeline({
+        onComplete: function() {
+            let main = document.querySelector(".maincard");
+            let incoming = document.querySelector(".incomingcard");
+
+            incoming.classList.remove("z-[2]");
+            incoming.classList.add("z-[3]");
+            incoming.classList.remove("incomingcard");
+
+            main.classList.remove("z-[3]");
+            main.classList.add("z-[2]");
+            gsap.set(main, {
+                scale: 1,
+                opacity:1
+            })
+        }
+    });
 
     tl.to(".maincard", {
         scale: 1.1,
