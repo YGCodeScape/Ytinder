@@ -85,8 +85,8 @@ let users = [
         isFriends: null
     },
     {
-        profilePic: "https://i.pinimg.com/736x/b9/17/4c/b9174ce6ec4f5f20ab3714ff19c2e4e1.jpg",
-        DisplayPic : "https://i.pinimg.com/736x/4b/a2/a0/4ba2a0286fc49124472da74c7585b59f.jpg",
+        profilePic: "https://i.pinimg.com/736x/4b/a2/a0/4ba2a0286fc49124472da74c7585b59f.jpg",
+        DisplayPic : "https://i.pinimg.com/736x/b9/17/4c/b9174ce6ec4f5f20ab3714ff19c2e4e1.jpg",
         pendingMessage: 4,
         location: "Chennai, India",
         name: "Ankita",
@@ -145,7 +145,7 @@ function imageChange() {
 if(!isAnimating) {
     isAnimating = true;
     let tl = gsap.timeline({
-        
+
       onComplete: function() {
         isAnimating = false;
             let main = document.querySelector(".maincard");
