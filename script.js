@@ -109,17 +109,16 @@ let users = [
 let crr = 0;  // current profile 
 let isAnimating = false;
 
-(function setInitial() {
-    document.querySelector(".maincard img").src = users[crr].DisplayPic;
-    document.querySelector(".pro-img img").src = users[crr].profilePic;
-    document.querySelector(".badge h5").textContent = users[crr].pendingMessage;
-    document.querySelector(".location h3").textContent = users[crr].location;
-    document.querySelector(".name-age h1:nth-child(1)").textContent = users[crr].name;
-    document.querySelector(".name-age h1:nth-child(2)").textContent = users[crr].age;
+function setData(index) {
+    document.querySelector(".pro-img img").src = users[index].profilePic;
+    document.querySelector(".badge h5").textContent = users[index].pendingMessage;
+    document.querySelector(".location h3").textContent = users[index].location;
+    document.querySelector(".name-age h1:nth-child(1)").textContent = users[index].name;
+    document.querySelector(".name-age h1:nth-child(2)").textContent = users[index].age;
 
     (function getInterests() {
      var clutter = "";
-        users[crr].interests.forEach(function(interests) {
+        users[index].interests.forEach(function(interests) {
          clutter +=`
              <div class="tag flex items-center bg-white/30 px-3 py-1 gap-2 rounded-full">
                ${interests.icon}
@@ -128,10 +127,14 @@ let isAnimating = false;
         })
         document.querySelector(".tags").innerHTML = clutter;
     })();
-    document.querySelector(".bio p").textContent = users[crr].bio;
+    document.querySelector(".bio p").textContent = users[index].bio;
+}
 
-
+(function setInitial() {
+    document.querySelector(".maincard img").src = users[crr].DisplayPic;
     document.querySelector(".incomingcard img").src = users[crr+1].DisplayPic;
+
+    setData(crr);
     crr = 2;
 })();
 
@@ -184,6 +187,7 @@ if(!isAnimating) {
 
   deny.addEventListener("click", function() {
       imageChange();
+      setData(crr-1);
       gsap.from(".details .elements", {
          y : "100%",
          stagger: .1,
