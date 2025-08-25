@@ -65,8 +65,8 @@ let users = [
         isFriends: null
     },
     {
-        profilePic: "https://i.pinimg.com/736x/6f/da/f7/6fdaf793b3e7b4857d005f0370e4d369.jpg",
-        DisplayPic: "https://i.pinimg.com/1200x/19/25/bf/1925bfebe812da1ad1c9b76cae320a95.jpg",
+        profilePic: "https://i.pinimg.com/736x/e8/f3/b1/e8f3b1da358079e1a9994039fc47cd54.jpg",
+        DisplayPic: "https://i.pinimg.com/736x/fb/18/56/fb1856dec6da0b54f291cc0a171cd4d3.jpg",
         pendingMessage: 3,
         location: "Bangalore, India",
         name: "Priya",
@@ -185,3 +185,13 @@ if(!isAnimating) {
   deny.addEventListener("click", function() {
       imageChange();
   });
+
+ ( function containerCreator() {
+    document.querySelectorAll(".elements")
+    .forEach(function(element) {
+        let div = document.createElement("div");
+        div.classList.add(`${element.classList[1]}container`);
+        div.appendChild(element);
+        document.querySelector(".details").appendChild(div);
+    })
+  })();
