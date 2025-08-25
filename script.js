@@ -150,6 +150,10 @@ function imageChange() {
                 scale: 1,
                 opacity:1
             })
+            main.classList.remove("maincard");
+            
+            incoming.classList.add("maincard");
+            main.classList.add("incomingcard");
         }
     });
 
